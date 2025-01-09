@@ -1,16 +1,15 @@
 {
-  "name": "origadmin",
+  "name": "webui",
   "version": "1.0.0",
-  "homepage": "https://origadmin.github.io/frontend",
+  "homepage": "https://origadmin.github.io/webui",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "shadcn": "pnpm dlx shadcn@latest",
-    "jsbuild": "node ./src/scripts/mako.js build --watch",
-    "start": "pnpm run dev",
-    "vite": "vite",
-    "dev": "pnpm tailwind:dev && mako build --mode development --watch",
-    "build": "pnpm tailwind && mako build --mode production",
+    "shadcn": "bun dlx shadcn@latest",
+    "start": "bun run dev",
+    "dev": "bun tailwind:dev && rsbuild dev --open",
+    "build": "bun tailwind && rsbuild build",
+    "preview": "bun tailwind && rsbuild preview",
     "tailwind:dev": "npx tailwindcss --postcss -i ./src/styles/globals.css -o src/assets/index.css",
     "tailwind": "npx tailwindcss --postcss -i ./src/styles/globals.css -o src/assets/index.css --minify"
   },
@@ -42,9 +41,9 @@
     "lucide-react": "^0.445.0",
     "next": "^15.1.3",
     "process": "^0.11.10",
-    "react": "^18.3.1",
     "react-day-picker": "8.10.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
     "react-refresh": "^0.14.2",
     "react-router-dom": "^7.1.1",
@@ -53,16 +52,16 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@rsbuild/core": "^1.1.8",
+    "@rsbuild/plugin-react": "^1.0.7",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@types/node": "^22.10.5",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
     "@umijs/mako": "^0.11.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2",
-    "vite": "^5.2.9",
-    "@vitejs/plugin-react-swc": "^3.6.0"
+    "typescript": "^5.7.2"
   },
   "engines": {
     "node": ">=18.0.0"

@@ -7,11 +7,14 @@
         "./src/*"
       ]
     },
-    "strict": true,
+    "lib": ["DOM", "ES2020"],
+    "target": "ES2020",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
+
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "target": "esnext",
-    "moduleResolution": "node",
     "exportStatic": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -19,8 +22,17 @@
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "declaration": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true
+    /* modules */
+    "module": "ESNext",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+
+    /* type checking */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": [
     "./**/*.d.ts",
